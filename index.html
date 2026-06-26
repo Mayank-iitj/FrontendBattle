@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ── Primary SEO ─────────────────────────────────────────── -->
+    <title>Fluxion — AI Data Automation Platform</title>
+    <meta name="description" content="Turn raw data into shipped automations with AI agents. Ingest anything, automate, observe, and govern — in one secure, scalable platform. No pipelines, no babysitting." />
+    <link rel="canonical" href="https://fluxion.ai/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- ── Open Graph ─────────────────────────────────────────── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fluxion — AI Data Automation Platform" />
+    <meta property="og:description" content="Ingest anything. Automate with AI agents. Observe & govern." />
+    <meta property="og:image" content="https://fluxion.ai/og.png" />
+    <meta property="og:url" content="https://fluxion.ai/" />
+    <meta property="og:site_name" content="Fluxion" />
+
+    <!-- ── Twitter Card ───────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fluxion — AI Data Automation Platform" />
+    <meta name="twitter:description" content="Ingest anything. Automate with AI agents. Observe & govern." />
+    <meta name="twitter:image" content="https://fluxion.ai/og.png" />
+
+    <!-- ── Favicon ────────────────────────────────────────────── -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- ── Fonts: self-hosted (woff2 files in /public/fonts/) ──── -->
+    <!-- @font-face declarations are in style.css -->
+
+    <!-- ── JSON-LD Structured Data ────────────────────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Fluxion",
+      "description": "AI-driven data automation platform. Ingest anything, automate with AI agents, observe and govern.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://fluxion.ai/",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fluxion Inc.",
+        "url": "https://fluxion.ai/"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "price": "19.00",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "49.00",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M"
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise",
+          "price": "129.00",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M"
+        }
+      ]
+    }
+    </script>
+
+    <!-- ── Styles ─────────────────────────────────────────────── -->
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+
+  <body>
+    <!-- Global 3D Background -->
+    <div id="global-canvas-wrap" aria-hidden="true" style="position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: 0.85;"></div>
+
+
+    <!-- â”€â”€ Entry Loader (visual overlay, not a content gate) â”€â”€â”€â”€â”€â”€â”€ -->
+    <div id="loader" aria-hidden="true" role="presentation">
+      <svg class="loader-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 20 L20 8 L32 20 L20 32 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M14 20 L20 14 L26 20 L20 26 Z" fill="currentColor" opacity="0.7"/>
+        <path d="M20 14 L20 8 M20 26 L20 32 M14 20 L8 20 M26 20 L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="loader-text">Fluxion</span>
+      <div class="loader-bar" aria-hidden="true"></div>
+    </div>
+
+    <!-- â”€â”€ Site Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <header class="site-header" role="banner">
+      <a href="#hero" class="header-logo" aria-label="Fluxion home">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 20 L20 8 L32 20 L20 32 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M14 20 L20 14 L26 20 L20 26 Z" fill="currentColor" opacity="0.7"/>
+          <path d="M20 14 L20 8 M20 26 L20 32 M14 20 L8 20 M26 20 L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-wordmark">Flux<span>ion</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#social">Customers</a>
+        <a href="#cta">Get started</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#pricing" class="btn btn-ghost" id="header-signin">Sign in</a>
+        <a href="#cta" class="btn btn-primary" id="header-cta">Start free
+          <!-- chevron-right.svg from asset package -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m8.25 4.5l7.5 7.5l-7.5 7.5"/>
+          </svg>
+        </a>
+        <button class="btn btn-menu" id="mobileMenuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+          <!-- x-mark.svg from asset package -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" id="menuIcon" style="width:22px;height:22px">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#social">Customers</a>
+      <a href="#cta">Get started</a>
+    </nav>
+
+    <!-- â”€â”€ Main Content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <main>
+
+      <!-- â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+      <section id="hero" aria-labelledby="hero-heading">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-blob hero-blob-1"></div>
+          <div class="hero-blob hero-blob-2"></div>
+          <div class="hero-grid"></div>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-inner">
+            <div class="hero-text">
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Now in public beta "” 2,000+ teams onboarded
+              </div>
+
+              <h1 id="hero-heading">
+                Turn raw data into<br/>
+                <span class="text-gradient">shipped automations.</span>
+              </h1>
+
+              <p class="hero-sub">
+                No pipelines. No babysitting. Fluxion's AI agents ingest anything,
+                reason over it, and deploy production-ready automations in minutes.
+              </p>
+
+              <div class="hero-cta">
+                <a href="#cta" class="btn btn-primary btn-lg" id="hero-cta-primary">
+                  Start for free
+                  <!-- chevron-right.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m8.25 4.5l7.5 7.5l-7.5 7.5"/>
+                  </svg>
+                </a>
+                <a href="#features" class="btn btn-ghost btn-lg" id="hero-cta-secondary">
+                  See how it works
+                </a>
+              </div>
+
+              <ul class="hero-meta">
+                <li class="hero-meta-item">
+                  <!-- arrow-path.svg (refresh/check) from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:15px;height:15px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/>
+                  </svg>
+                  No credit card required
+                </li>
+                <li class="hero-meta-item">
+                  <!-- arrow-path.svg (refresh/check) from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:15px;height:15px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/>
+                  </svg>
+                  14-day free trial
+                </li>
+                <li class="hero-meta-item">
+                  <!-- arrow-path.svg (refresh/check) from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:15px;height:15px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/>
+                  </svg>
+                  Cancel anytime
+                </li>
+              </ul>
+            </div>
+
+            <div class="hero-visual">
+              <div id="hero-canvas-wrap" aria-label="Animated visualization of Fluxion's AI data automation network" style="width:100%; height:100%;"></div>
+              <div class="hero-canvas-fallback" aria-hidden="true">
+                <p>AI Data Automation Network</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats" aria-label="Platform statistics">
+          <div class="hero-stats-inner glass-panel">
+            <div class="hero-stat">
+              <div class="hero-stat-value" id="stat-teams">2,000+</div>
+              <div class="hero-stat-label">Teams onboarded</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value" id="stat-automations">48M+</div>
+              <div class="hero-stat-label">Automations shipped</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value" id="stat-uptime">99.97%</div>
+              <div class="hero-stat-label">Platform uptime</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- â”€â”€ Features (Bento â‡„ Accordion) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+      <section id="features" aria-labelledby="features-heading">
+        <div id="features-canvas-wrap" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;"></div>
+        <div class="section-inner">
+          <header class="features-header reveal">
+            <p class="section-label">Platform capabilities</p>
+            <h2 class="section-heading" id="features-heading">
+              Everything your data team<br/>
+              <span class="text-gradient">actually needs</span>
+            </h2>
+            <p class="section-sub">
+              From ingestion to governance, Fluxion covers the full automation lifecycle "”
+              without the enterprise complexity.
+            </p>
+          </header>
+
+          <!-- Desktop: Bento Grid (rendered by JS from FEATURES array) -->
+          <div class="bento" role="list" aria-label="Platform features"></div>
+
+          <!-- Mobile: Accordion (rendered by JS from same FEATURES array) -->
+          <div class="accordion" aria-label="Platform features"></div>
+        </div>
+      </section>
+
+      <!-- â”€â”€ Pricing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+      <section id="pricing" aria-labelledby="pricing-heading">
+        <div id="pricing-canvas-wrap" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;"></div>
+        <div class="section-inner">
+          <header class="pricing-header reveal">
+            <p class="section-label">Pricing</p>
+            <h2 class="section-heading" id="pricing-heading">
+              Simple pricing,<br/>
+              <span class="text-gradient">serious horsepower</span>
+            </h2>
+            <p class="section-sub">
+              Start free. Scale as you grow. All plans include the core AI automation engine.
+            </p>
+          </header>
+
+          <!-- â”€â”€ Pricing Controls â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+          <div class="pricing-controls">
+            <!-- Billing Cycle Toggle -->
+            <div class="toggle-group" role="group" aria-label="Billing cycle">
+              <span id="label-monthly" class="toggle-label active-label">Monthly</span>
+              <label class="switch" for="billingToggle">
+                <input
+                  type="checkbox"
+                  id="billingToggle"
+                  role="switch"
+                  aria-checked="false"
+                  aria-label="Toggle annual billing"
+                />
+                <span class="switch-track" aria-hidden="true">
+                  <span class="switch-thumb"></span>
+                </span>
+              </label>
+              <span id="label-annual" class="toggle-label">
+                Annual
+                <span class="savings-badge" data-savings>Save 20%</span>
+              </span>
+            </div>
+
+            <!-- Currency Selector -->
+            <div class="currency-group">
+              <label for="currencySel">Currency</label>
+              <select id="currencySel" class="currency-select" aria-label="Select currency">
+                <option value="USD">USD $</option>
+                <option value="EUR">EUR â‚¬</option>
+                <option value="INR">INR â‚¹</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- â”€â”€ Pricing Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+          <!-- IMPORTANT: No literal prices in this markup.
+               All [data-price] spans are empty; JS fills them via textContent only. -->
+          <div class="pricing-grid" id="pricingGrid">
+
+            <!-- Starter -->
+            <article class="tier-card" id="tier-starter" data-tier="starter">
+              <h3 class="tier-name">Starter</h3>
+              <p class="tier-blurb">For solo builders</p>
+              <div class="tier-price" aria-label="Starter plan price">
+                <span class="price-amount" data-price="starter" aria-live="polite"></span>
+                <span class="price-period" data-period></span>
+              </div>
+              <ul class="tier-features" aria-label="Starter plan features">
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  <span class="tooltip" data-tooltip="Single team environment">1 workspace</span>
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  <span class="tooltip" data-tooltip="Concurrent active AI pipelines">5 automations</span>
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  <span class="tooltip" data-tooltip="Includes databases, APIs, and raw files">200+ source connectors</span>
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  Community support
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  Basic observability
+                </li>
+              </ul>
+              <a href="#cta" class="btn btn-ghost tier-cta" id="cta-starter">Start free trial</a>
+            </article>
+
+            <!-- Pro (highlighted) -->
+            <article class="tier-card highlighted" id="tier-pro" data-tier="pro">
+              <div class="tier-badge" aria-label="Most popular plan">Most popular</div>
+              <h3 class="tier-name">Pro</h3>
+              <p class="tier-blurb">For scaling teams</p>
+              <div class="tier-price" aria-label="Pro plan price">
+                <span class="price-amount" data-price="pro" aria-live="polite"></span>
+                <span class="price-period" data-period></span>
+              </div>
+              <ul class="tier-features" aria-label="Pro plan features">
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  Unlimited automations
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  AI agents (GPT-4o + Claude)
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  <span class="tooltip" data-tooltip="Visual node-based data flow tracing">Advanced lineage tracking</span>
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  Priority support (&lt; 4h SLA)
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  Team permissions &amp; audit log
+                </li>
+              </ul>
+              <a href="#cta" class="btn btn-primary tier-cta" id="cta-pro">Start for free
+                <!-- chevron-right.svg from asset package -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m8.25 4.5l7.5 7.5l-7.5 7.5"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- Enterprise -->
+            <article class="tier-card" id="tier-enterprise" data-tier="enterprise">
+              <h3 class="tier-name">Enterprise</h3>
+              <p class="tier-blurb">For data orgs</p>
+              <div class="tier-price" aria-label="Enterprise plan price">
+                <span class="price-amount" data-price="enterprise" aria-live="polite"></span>
+                <span class="price-period" data-period></span>
+              </div>
+              <ul class="tier-features" aria-label="Enterprise plan features">
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  <span class="tooltip" data-tooltip="SAML/OIDC support with RBAC">SSO + governance controls</span>
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  Dedicated compute infra
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  <span class="tooltip" data-tooltip="Bring your own LLM API keys">Custom AI model integration</span>
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  24/7 SLA with named CSM
+                </li>
+                <li class="tier-feature">
+                  <!-- link.svg from asset package -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/>
+                  </svg>
+                  On-prem / VPC deployment
+                </li>
+              </ul>
+              <a href="#cta" class="btn btn-outline tier-cta" id="cta-enterprise">Contact sales</a>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- â”€â”€ Social Proof â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+      <section id="social" aria-labelledby="social-heading">
+        <div id="social-canvas-wrap" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;"></div>
+        <div class="section-inner">
+          <header class="reveal" style="margin-bottom: var(--space-10); text-align: center;">
+            <p class="section-label">Trusted by builders</p>
+            <h2 class="section-heading" id="social-heading">
+              Loved by data teams<br/>
+              <span class="text-gradient">at every scale</span>
+            </h2>
+          </header>
+
+          <!-- Company logos (Infinite Marquee) -->
+          <div class="marquee-wrapper reveal" aria-label="Companies using Fluxion">
+            <div class="marquee-content" role="list">
+              <!-- Set 1 -->
+              <div class="logo-item" role="listitem">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-label="Acme Corp" style="height:24px;width:auto">
+                  <text x="0" y="18" font-family="monospace" font-size="14" font-weight="700" letter-spacing="2">ACME</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-label="Nexus" style="height:24px;width:auto">
+                  <polygon points="10,4 16,12 10,20 4,12" fill="currentColor" opacity="0.8"/>
+                  <text x="22" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">NEXUS</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-label="Prism" style="height:24px;width:auto">
+                  <polygon points="8,20 16,4 24,20" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <text x="30" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">PRISM</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-label="Forge" style="height:24px;width:auto">
+                  <rect x="4" y="6" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <rect x="8" y="10" width="6" height="6" fill="currentColor" opacity="0.7"/>
+                  <text x="24" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">FORGE</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-label="Orbit" style="height:24px;width:auto">
+                  <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                  <text x="26" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">ORBIT</text>
+                </svg>
+              </div>
+              
+              <!-- Set 2 -->
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <text x="0" y="18" font-family="monospace" font-size="14" font-weight="700" letter-spacing="2">ACME</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <polygon points="10,4 16,12 10,20 4,12" fill="currentColor" opacity="0.8"/>
+                  <text x="22" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">NEXUS</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <polygon points="8,20 16,4 24,20" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <text x="30" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">PRISM</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <rect x="4" y="6" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <rect x="8" y="10" width="6" height="6" fill="currentColor" opacity="0.7"/>
+                  <text x="24" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">FORGE</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                  <text x="26" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">ORBIT</text>
+                </svg>
+              </div>
+
+              <!-- Set 3 -->
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <text x="0" y="18" font-family="monospace" font-size="14" font-weight="700" letter-spacing="2">ACME</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <polygon points="10,4 16,12 10,20 4,12" fill="currentColor" opacity="0.8"/>
+                  <text x="22" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">NEXUS</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <polygon points="8,20 16,4 24,20" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <text x="30" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">PRISM</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <rect x="4" y="6" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <rect x="8" y="10" width="6" height="6" fill="currentColor" opacity="0.7"/>
+                  <text x="24" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">FORGE</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                  <text x="26" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">ORBIT</text>
+                </svg>
+              </div>
+
+              <!-- Set 4 -->
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <text x="0" y="18" font-family="monospace" font-size="14" font-weight="700" letter-spacing="2">ACME</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <polygon points="10,4 16,12 10,20 4,12" fill="currentColor" opacity="0.8"/>
+                  <text x="22" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">NEXUS</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <polygon points="8,20 16,4 24,20" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <text x="30" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">PRISM</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <rect x="4" y="6" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <rect x="8" y="10" width="6" height="6" fill="currentColor" opacity="0.7"/>
+                  <text x="24" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">FORGE</text>
+                </svg>
+              </div>
+              <div class="logo-item" role="listitem" aria-hidden="true">
+                <svg viewBox="0 0 90 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto">
+                  <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                  <text x="26" y="18" font-family="monospace" font-size="13" font-weight="700" letter-spacing="1">ORBIT</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonials -->
+          <div class="testimonials-grid reveal">
+            <figure class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+              </div>
+              <blockquote class="testimonial-quote">
+                "We replaced three legacy ETL pipelines with a single Fluxion automation. 
+                What used to take three sprints now ships in an afternoon. Genuinely remarkable."
+              </blockquote>
+              <figcaption class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">SR</div>
+                <div>
+                  <div class="author-name">Sarah Reyes</div>
+                  <div class="author-role">Head of Data Engineering, Nexus</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+              </div>
+              <blockquote class="testimonial-quote">
+                "The AI agents actually understand what we're trying to accomplish. 
+                Fluxion felt like it was built by engineers who've felt the pain of 
+                data pipeline maintenance "” because it was."
+              </blockquote>
+              <figcaption class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">ML</div>
+                <div>
+                  <div class="author-name">Marcus Lee</div>
+                  <div class="author-role">CTO, Forge Analytics</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+              </div>
+              <blockquote class="testimonial-quote">
+                "Governance was our biggest concern at scale. Fluxion's lineage 
+                tracking and audit logs give us the paper trail that compliance 
+                requires, without slowing down the team."
+              </blockquote>
+              <figcaption class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">AK</div>
+                <div>
+                  <div class="author-name">Anika Kumar</div>
+                  <div class="author-role">VP of Data, Orbit Health</div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-grid reveal" role="list" aria-label="Platform statistics">
+            <div class="stat-card" role="listitem">
+              <div class="stat-value">48M+</div>
+              <div class="stat-label">Automations shipped monthly</div>
+            </div>
+            <div class="stat-card" role="listitem">
+              <div class="stat-value">200+</div>
+              <div class="stat-label">Native connectors</div>
+            </div>
+            <div class="stat-card" role="listitem">
+              <div class="stat-value">99.97%</div>
+              <div class="stat-label">Platform uptime SLA</div>
+            </div>
+            <div class="stat-card" role="listitem">
+              <div class="stat-value">4 min</div>
+              <div class="stat-label">Average time-to-first-automation</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- â”€â”€ Closing CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+      <section id="cta" aria-labelledby="cta-heading">
+        <div id="cta-canvas-wrap" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;"></div>
+        <div class="section-inner" style="text-align:center; position:relative; z-index:1;">
+          <div class="reveal">
+            <p class="section-label" style="justify-content:center">Get started today</p>
+            <h2 class="cta-heading" id="cta-heading">
+              Your data is waiting.<br/>
+              <span class="text-gradient">Ship the automation.</span>
+            </h2>
+            <p class="cta-sub">
+              Join 2,000+ teams shipping automations with AI. 
+              Start for free "” no credit card required.
+            </p>
+
+            <form class="cta-form" id="ctaForm" aria-label="Start free trial signup">
+              <label for="ctaEmail" class="sr-only">Work email address</label>
+              <input
+                type="email"
+                id="ctaEmail"
+                class="cta-input"
+                placeholder="you@company.com"
+                autocomplete="email"
+                required
+                aria-required="true"
+              />
+              <button type="submit" class="btn btn-primary" id="cta-submit">
+                Start for free
+                <!-- chevron-right.svg from asset package -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m8.25 4.5l7.5 7.5l-7.5 7.5"/>
+                </svg>
+              </button>
+            </form>
+            <p class="cta-note">No credit card. 14-day trial. Cancel anytime.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#hero" class="header-logo" aria-label="Fluxion home">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28">
+                <path d="M8 20 L20 8 L32 20 L20 32 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M14 20 L20 14 L26 20 L20 26 Z" fill="currentColor" opacity="0.7"/>
+              </svg>
+              <span class="logo-wordmark">Flux<span>ion</span></span>
+            </a>
+            <p>Turn raw data into shipped automations "” no pipelines, no babysitting. Built for engineers who move fast.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#social">Customers</a></li>
+              <li><a href="#cta">Changelog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Developers</h4>
+            <ul>
+              <li><a href="#cta">Documentation</a></li>
+              <li><a href="#cta">API Reference</a></li>
+              <li><a href="#cta">SDK &amp; CLI</a></li>
+              <li><a href="#cta">Status page</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#cta">About</a></li>
+              <li><a href="#cta">Blog</a></li>
+              <li><a href="#cta">Careers</a></li>
+              <li><a href="#cta">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            &copy; 2025 <address>Fluxion, Inc.</address> All rights reserved.
+          </p>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="#cta">Privacy Policy</a>
+            <a href="#cta">Terms of Service</a>
+            <a href="#cta">Cookie Settings</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- â”€â”€ Scripts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+
+
+
