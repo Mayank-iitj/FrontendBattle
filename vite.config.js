@@ -6,9 +6,10 @@ export default defineConfig({
     target: 'es2020',
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split Three.js into a separate lazy chunk — keeps critical bundle tiny
-          three: ['three'],
+        manualChunks(id) {
+          if (id.includes('node_modules/three')) {
+            return 'three';
+          }
         },
       },
     },
